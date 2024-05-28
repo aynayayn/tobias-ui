@@ -2,7 +2,8 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "precommit": "npx eslint . --fix"
+    "prepare": "husky",
+    "lint:lint-staged": "lint-staged"
   },
   "dependencies": {
     "vue": "^3.4.21"
@@ -12,13 +13,33 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.55.0",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run precommit"
-    }
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
