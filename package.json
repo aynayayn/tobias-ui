@@ -1,7 +1,9 @@
 {
   "type": "module",
   "version": "0.0.0",
-  "scripts": {},
+  "scripts": {
+    "precommit": "npx eslint . --fix"
+  },
   "dependencies": {
     "vue": "^3.4.21"
   },
@@ -9,8 +11,14 @@
     "@mistjs/eslint-config": "^1.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.55.0",
+    "husky": "^9.0.11",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   }
 }
