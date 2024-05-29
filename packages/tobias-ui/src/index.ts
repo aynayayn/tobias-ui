@@ -1,1 +1,1 @@
-console.log('git commit with husky-eslint test')
+console.log('change to add it to stage, do husky-lint-staged test')
