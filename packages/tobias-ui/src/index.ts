@@ -1,1 +1,1 @@
-console.log('md', '123')
+console.log('git commit with husky-eslint test')
