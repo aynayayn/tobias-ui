@@ -15,6 +15,10 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: /^tobias-ui/,
+        replacement: resolve(base, 'packages/tobias-ui/src'),
+      },
+      {
         find: /^@tobias-ui\/utils/,
         replacement: resolve(base, 'packages/utils/src'),
       },

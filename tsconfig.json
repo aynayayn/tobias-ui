@@ -10,9 +10,8 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "paths": {
-      "@tobias-ui/utils": [
-        "packages/utils/src"
-      ]
+      "tobias-ui": ["packages/tobias-ui/src"],
+      "@tobias-ui/utils": ["packages/utils/src"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
