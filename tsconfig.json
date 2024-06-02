@@ -4,10 +4,16 @@
     "jsx": "preserve",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
+    "baseUrl": ".",
     "module": "ESNext",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "@tobias-ui/utils": [
+        "packages/utils/src"
+      ]
+    },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
 
@@ -20,5 +26,7 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { "path": "./tsconfig.node.json" }
+  ]
 }

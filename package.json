@@ -2,22 +2,30 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "dependencies": {
     "vue": "^3.4.21"
   },
   "devDependencies": {
     "@mistjs/eslint-config": "^1.0.0",
+    "@types/node": "^20.13.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^8.55.0",
     "husky": "8.0.3",
     "lint-staged": "^15.2.5",
     "typescript": "5.2.2",
     "vite": "^5.2.0",
+    "vite-plugin-vitepress-demo": "^2.2.1",
+    "vitepress": "^1.2.2",
     "vue-tsc": "^2.0.6"
   },
   "lint-staged": {
-    "./**/*.{js,ts,vue,tsx,jsx,css,less,json}": ["eslint --fix"]
+    "./**/*.{js,ts,vue,tsx,jsx,css,less,json}": [
+      "eslint --fix"
+    ]
   }
 }
