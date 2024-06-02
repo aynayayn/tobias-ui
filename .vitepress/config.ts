@@ -7,6 +7,7 @@ export default defineConfig({
   rewrites: {
     'docs/(.*)': '(.*)', // value的开头注意不要加/
     'packages/tobias-ui/src/:comp/(.*)': 'components/:comp/(.*)', // value的开头注意不要加/
+    'packages/utils/src/(.*)': 'utils/(.*)',
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -19,6 +20,9 @@ export default defineConfig({
       '/components/': [
         { text: '按钮', link: '/components/button/' },
         { text: '输入框', link: '/components/input/' },
+      ],
+      '/utils/': [
+        { text: 'genClassname', link: '/utils/gen-classname' },
       ],
     },
 
