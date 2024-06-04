@@ -28,15 +28,7 @@
     "skipLibCheck": true
   },
   "references": [
-    { "path": "./tsconfig.node.json" }
-  ],
-  "include": [
-    "/packages/**/*.ts",
-    "/packages/**/*.js",
-    "/packages/**/*.less",
-    "/packages/**/*.vue",
-    "/packages/**/*.tsx",
-    "/packages/**/*.jsx",
-    "/packages/**/*.css"
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tsconfig.vitepress.json" }
   ]
 }

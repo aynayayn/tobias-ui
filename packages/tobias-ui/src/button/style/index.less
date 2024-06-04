@@ -1,0 +1,85 @@
+@import '../../style/index.less';
+
+.tobias-button {
+  background: none;
+  cursor: pointer;
+  border: 1px solid var(--tobias-color-border);
+  outline: none;
+  color: inherit;
+  padding: 4px 8px;
+  border-radius: 4px;
+  height: 32px;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+
+  // 默认按钮样式
+  &--default {
+    border-color: var(--tobias-color-border);
+    color: var(--tobias-color-text);
+
+    &:hover {
+      border-color: var(--tobias-color-primary-hover);
+      color: var(--tobias-color-primary-hover);
+    }
+
+    &:active {
+      border-color: var(--tobias-color-primary-active);
+      color: var(--tobias-color-primary-active);
+    }
+  }
+
+  // primary按钮样式
+  &--primary {
+    border-color: var(--tobias-color-primary);
+    color: #FFFFFF;
+    background-color: var(--tobias-color-primary);
+
+    &:hover {
+      background-color: var(--tobias-color-primary-hover);
+      border-color: var(--tobias-color-primary-hover);
+    }
+
+    &:active {
+      background-color: var(--tobias-color-primary-active);
+      border-color: var(--tobias-color-primary-active);
+    }
+  }
+
+  // dashed（虚线）按钮样式
+  &--dashed {
+    border-style: dashed;
+    border-color: var(--tobias-color-border);
+    color: var(--tobias-color-text);
+
+    &:hover {
+      border-color: var(--tobias-color-primary-hover);
+      color: var(--tobias-color-primary-hover);
+    }
+
+    &:active {
+      border-color: var(--tobias-color-primary-active);
+      color: var(--tobias-color-primary-active);
+    }
+  }
+
+  &-size {
+    &--small {
+      height: 24px;
+      padding: 2px 4px;
+      font-size: 12px;
+    }
+    &--large {
+      height: 40px;
+      padding: 6px 12px;
+      font-size: 20px;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: #D9D9D9;
+    color: #BFBFBF;
+    background-color: #F0F0F0;
+  }
+}
