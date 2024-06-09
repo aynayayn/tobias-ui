@@ -40,8 +40,9 @@ export default defineComponent({
 })
 </script>
 
+<!-- :disabled="$props.disabled" or :disabled="disabled" -->
+<!-- 不要随意在template中编写注释 -->
 <template>
-  <!-- :disabled="$props.disabled" or :disabled="disabled" -->
   <button :disabled="$props.disabled" :class="cls" @click="handleClick">
     <slot />
   </button>

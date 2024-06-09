@@ -20,6 +20,7 @@ export default defineConfig({
       '/components/': [
         { text: '按钮', link: '/components/button/' },
         { text: '输入框', link: '/components/input/' },
+        { text: 'Tooltip信息提示', link: '/components/tooltip/' },
       ],
       '/utils/': [
         { text: 'genClassname', link: '/utils/gen-classname' },
