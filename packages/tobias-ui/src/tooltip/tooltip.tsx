@@ -10,7 +10,7 @@ export default defineComponent({
   props: {
     placement: {
       type: String as PropType<Placement>,
-      default: 'top', // top/bottom/left/right-start/end
+      default: 'top', // [top|bottom|left|right]-[start|end]
     },
     content: {
       type: String as PropType<string>,
@@ -78,7 +78,7 @@ export default defineComponent({
         if (!unref(show))
           return null
 
-        const cls = [c(['float', 'E'])]
+        const cls = [c(['floating', 'E'])]
 
         const floatingEvents = {
           onMouseenter: handleFloatingMouseEnter,

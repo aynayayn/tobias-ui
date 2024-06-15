@@ -1,0 +1,30 @@
+@import '../../style/index.less';
+
+.tobias-table {
+  &-cell {
+    padding: 16px;
+    border-bottom: 1px solid var(--tobias-color-table-border);
+  }
+
+  &-header {
+    box-sizing: border-box;
+
+    &-cell {
+      position: relative;
+      background-color: var(--tobias-color-table-header-bg);
+
+      &:not(:last-child) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 1.5em;
+          background-color: var(--tobias-color-table-border);
+        }
+      }
+    }
+  }
+}

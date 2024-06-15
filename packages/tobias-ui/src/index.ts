@@ -9,7 +9,7 @@ export * from './components'
 export default {
   install(app: App) {
     Object.entries(components).forEach(([_name, comp]) => {
-      if (comp.install)
+      if ((comp as unknown as Plugin).install)
         app.use(comp as any)
     })
   },
