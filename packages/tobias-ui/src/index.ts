@@ -1,9 +1,9 @@
 import type { App, Plugin } from 'vue'
+import * as components from 'tobias-ui/components'
 import pkg from '../package.json'
-import * as components from './components'
 
 // 为了按需导入 import { Button } from 'tobias-ui'; app.use(Button);
-export * from './components'
+export * from 'tobias-ui/components'
 
 // 为了全局导入 import TobiasUI from 'tobias-UI'; app.use(TobiasUI);
 export default {

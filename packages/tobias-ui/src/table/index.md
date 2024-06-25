@@ -11,7 +11,7 @@
 ## 属性
 | 属性名称 | 说明 | 类型 | 默认值 |
 | ---- | ---- | :----: | :----: |
-| columns | 表格的列信息 | `{title: string;key: string;render?: (params: { value: any; record: Record<string,any> }) => string | VNode | null | undefined | number;slot?: string}[]` | `[]` |
+| columns | 表格的列信息 | `{title:string; key:string; render?:(params:{value:any; record:Record<string,any>}) => string \| VNode \| null \| undefined \| number; slot?:string}[]` | `[]` |
 | data | 表格需要展示的数据 | `any[]` | `[]` |
 
 ## 插槽

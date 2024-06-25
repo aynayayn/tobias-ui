@@ -22,6 +22,7 @@ export default defineConfig({
         { text: '输入框', link: '/components/input/' },
         { text: 'Tooltip信息提示', link: '/components/tooltip/' },
         { text: 'Table', link: '/components/table/' },
+        { text: '虚拟滚动列表', link: '/components/virtual-list/' },
       ],
       '/utils/': [
         { text: 'genClassname', link: '/utils/gen-classname' },

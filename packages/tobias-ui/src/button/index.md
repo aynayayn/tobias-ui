@@ -14,6 +14,6 @@
 | disabled | 设置按钮的禁用状态 | boolean | `false` | 
 
 ## 事件
-| 事件 | 说明 | 类型 |
+| 事件 | 说明 | 事件参数 |
 | ---- | ---- | :----: |
-| click | 点击的时候触发的事件 | `(event: Event) => void` |
+| click | 点击的时候触发的事件 | `[event: Event]` |
