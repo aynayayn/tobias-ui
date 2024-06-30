@@ -1,9 +1,20 @@
 import { resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 
+const base = fileURLToPath(new URL('.', import.meta.url))
+
 export default defineConfig({
+  resolve: {
+    // src/styles.less中使用了tobias-ui别名，需要使打包器对此进行识别
+    alias: [
+      {
+        find: /^tobias-ui/,
+        replacement: resolve(base, 'src'),
+      },
+    ],
+  },
   build: {
     emptyOutDir: false,
     lib: {
