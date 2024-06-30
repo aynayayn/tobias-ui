@@ -7,7 +7,9 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "build:umd": "vite build --config vite.umd.config.ts",
+    "build:style": "vite build --config vite.style.config.ts"
   },
   "dependencies": {
     "@floating-ui/vue": "^1.0.6",

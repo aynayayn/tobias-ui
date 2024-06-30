@@ -4,7 +4,8 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import { AntdTheme } from 'vite-plugin-vitepress-demo/theme'
-import TobiasUI from 'tobias-ui'
+
+// import TobiasUI from 'tobias-ui'
 import 'tobias-ui/styles'
 
 export default {
@@ -16,6 +17,6 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('Demo', AntdTheme)
-    app.use(TobiasUI)
+    // app.use(TobiasUI)
   },
 } satisfies Theme
