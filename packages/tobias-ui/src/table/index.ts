@@ -1,6 +1,6 @@
 import type { App, Plugin } from 'vue'
-import Table from 'tobias-ui/table/table'
-import { TableColumn } from 'tobias-ui/table/components/table-column'
+import { TableColumn } from './components/table-column'
+import Table from './table'
 
 (Table as unknown as Plugin).install = (app: App) => {
   app.component(Table.name!, Table)

@@ -1,9 +1,9 @@
 import { defineComponent, isVNode } from 'vue'
-import type { TableProps } from 'tobias-ui/table/interface'
-import { Header } from 'tobias-ui/table/components/header'
-import { Body } from 'tobias-ui/table/components/body'
 import { filterEmpty, isBaseType } from '@v-c/utils'
 import { useClassnames } from '@tobias-ui/utils'
+import { Body } from './components/body'
+import { Header } from './components/header'
+import type { TableProps } from './interface'
 
 export default defineComponent<TableProps>({
   name: 'TTable',

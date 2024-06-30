@@ -13,9 +13,15 @@
       "tobias-ui": ["packages/tobias-ui/src"],
       "tobias-ui/*": ["packages/tobias-ui/src/*"],
       "@tobias-ui/utils": ["packages/utils/src"],
-      "@tobias-ui/utils/*": ["packages/utils/src/*"]
+      "@tobias-ui/utils/*": ["packages/utils/src/*"],
+      "@tobias-ui/icons": ["packages/icons/src"],
+      "@tobias-ui/icons/*": ["packages/icons/src/*"]
     },
     "resolveJsonModule": true,
+    // 为了可以让全局API支持ts，将vitest/globals添加到tsconfig.json中的types选项中
+    "types": [
+      "vitest/globals"
+    ],
     "allowImportingTsExtensions": true,
 
     /* Linting */

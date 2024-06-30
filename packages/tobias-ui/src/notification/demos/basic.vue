@@ -19,7 +19,7 @@ function handleClick() {
     title: Mock.mock('@ctitle(1, 7)'),
     // content: h(Button, {}, '测试按钮'), // 这样写，t-button的样式是生效的
     content: h(NotiContent), // 这样写（NotiContent组件里引用了t-button），t-button的样式不生效
-    appContext: curInstance.appContext,
+    appContext: curInstance?.appContext,
   })
 
   setTimeout(() => {

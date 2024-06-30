@@ -2,8 +2,8 @@ import type { PropType, StyleValue } from 'vue'
 import { computed, defineComponent, onMounted, onUpdated, ref, watch } from 'vue'
 import { useClassnames } from '@tobias-ui/utils'
 import { ResizeObserver } from '@juggle/resize-observer'
-import type { ContentType, PositionInfo } from 'tobias-ui/virtual-list/interface'
 import { omit } from 'lodash-es'
+import type { ContentType, PositionInfo } from './interface'
 
 export default defineComponent({
   name: 'TVirtualListDynamicItemHeight',

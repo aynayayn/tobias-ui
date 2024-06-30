@@ -1,5 +1,5 @@
-import { createNotification } from 'tobias-ui/notification/instance'
 import type { App, Plugin } from 'vue'
+import { createNotification } from './instance'
 
 const instance = createNotification();
 

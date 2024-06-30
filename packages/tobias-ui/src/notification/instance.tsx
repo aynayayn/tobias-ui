@@ -1,7 +1,7 @@
-import type { NotificationInfoParams, NotificationInstance } from 'tobias-ui/notification/interface'
-import Notification from 'tobias-ui/notification/notification'
-import type { AppContext } from 'vue'
+import type { AppContext, VNode } from 'vue'
 import { h, render } from 'vue'
+import Notification from './notification'
+import type { NotificationInfoParams, NotificationInstance } from './interface'
 
 export function createNotification() {
   let instance: NotificationInstance
@@ -9,7 +9,7 @@ export function createNotification() {
   const init = (appContext?: AppContext) => {
     const body = document.body
 
-    const vm = h(Notification, {
+    const vm: VNode = h(Notification, {
       onReady(_instance: NotificationInstance) {
         instance = _instance
       },

@@ -1,20 +1,20 @@
-import VirtualList from 'tobias-ui/virtual-list/virtual-list'
-import type { App } from 'vue'
-import VirtualListTranslate from 'tobias-ui/virtual-list/virtual-list-translate'
-import VirtualListDynamicItemHeight from 'tobias-ui/virtual-list/virtual-list-dynamic-item-height'
+import type { App, Plugin } from 'vue'
+import VirtualListDynamicItemHeight from './virtual-list-dynamic-item-height'
+import VirtualListTranslate from './virtual-list-translate'
+import VirtualList from './virtual-list'
 
-VirtualList.install = (app: App) => {
+(VirtualList as unknown as Plugin).install = (app: App) => {
   app.component(VirtualList.name!, VirtualList)
 }
 
-export default VirtualList
+export default VirtualList;
 
-VirtualListTranslate.install = (app: App) => {
+(VirtualListTranslate as unknown as Plugin).install = (app: App) => {
   app.component(VirtualListTranslate.name!, VirtualListTranslate)
 }
 export { VirtualListTranslate }
 
-VirtualListDynamicItemHeight.install = (app: App) => {
+(VirtualListDynamicItemHeight as unknown as Plugin).install = (app: App) => {
   app.component(VirtualListDynamicItemHeight.name!, VirtualListDynamicItemHeight)
 }
 export { VirtualListDynamicItemHeight }
