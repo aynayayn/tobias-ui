@@ -20,7 +20,7 @@ function handleClick(e: Event) {
     <t-button size="small">
       按钮2
     </t-button>
-    <t-button type="large">
+    <t-button size="large">
       按钮3
     </t-button>
   </div>

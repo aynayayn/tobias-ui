@@ -1,0 +1,49 @@
+@import 'tobias-ui/style/index.less';
+
+.tobias-notification {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  width: 310px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+
+  &__item {
+     background-color: var(--tobias-color-bg);
+     margin-top: 15px;
+     display: flex;
+     flex-direction: column;
+     border-radius: 8px;
+     width: 100%;
+     padding: 20px;
+     box-shadow: var(--tobias-shadow-notification);
+
+     &__title {
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 8px;
+     }
+
+     &__content {
+      width: 100%;
+      font-size: 14px;
+      max-height: 350px;
+      overflow: auto;
+     }
+  }
+}
+
+.tobias-slide-right-enter-active, .tobias-slide-right-leave-active, .tobias-slide-right-move {
+  transition: all 0.3s;
+}
+
+.tobias-slide-right-enter-from, .tobias-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.tobias-slide-right-leave-active {
+  position: absolute;
+}
