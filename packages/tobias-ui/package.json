@@ -1,11 +1,29 @@
 {
   "name": "tobias-ui",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
-  "license": "ISC",
-  "keywords": [],
-  "main": "index.js",
+  "description": "this is a vue3 UI component library",
+  "author": "tobias.xt.wang@foxmail.com",
+  "license": "MIT",
+  "keywords": ["vue3", "components"],
+  "exports": {
+    ".": {
+      "types": "./es/index.d.ts",
+      "import": "./es/index.js",
+      "require": "./lib/index.js"
+    },
+    "./es/*": "./es/*",
+    "./dist/*": "./dist/*",
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json"
+  },
+  "main": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
   "scripts": {
     "build": "vite build",
     "build:umd": "vite build --config vite.umd.config.ts",
@@ -14,6 +32,7 @@
   "dependencies": {
     "@floating-ui/vue": "^1.0.6",
     "@juggle/resize-observer": "^3.4.0",
+    "@tobias-ui/utils": "workspace:*",
     "@v-c/utils": "^0.0.26",
     "lodash-es": "^4.17.21"
   },

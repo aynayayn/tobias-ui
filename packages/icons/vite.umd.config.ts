@@ -13,7 +13,7 @@ export default defineConfig({
     alias: [
       {
         find: /^@tobias-ui\/icons/,
-        replacement: resolve(base, './src/'),
+        replacement: resolve(base, './src'),
       },
     ],
   },
