@@ -14,16 +14,20 @@ export default defineConfig({
     vue(),
   ],
   resolve: {
-    // 需要识别@tobias-ui/utils别名
+    // 需要识别@tobias-ui/utils别名和tobias-ui，如果packages/tobias-ui子库中有使用到
     alias: [
       {
         find: /^@tobias-ui\/utils/,
-        replacement: resolve(base, './utils/src/'),
+        replacement: resolve(base, './utils/src'),
+      },
+      {
+        find: /^tobias-ui/,
+        replacement: resolve(base, './tobias-ui/src'),
       },
     ],
   },
   build: {
-    emptyOutDir: false,
+    // emptyOutDir: false,
     lib: {
       entry: 'src/index.ts',
       formats: ['umd'],

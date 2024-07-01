@@ -31,7 +31,7 @@ export default defineConfig({
   plugins: [
     {
       name: 'remove:tobias-ui-style.js',
-      // 本插件在打包结束之后执行，目的是移除./dist/tobias-ui-style.js这个文件
+      // 本插件在打包结束之后（所有命令执行结束后）执行，目的是移除./dist/tobias-ui-style.js这个文件
       closeBundle() {
         const tobiasPath = fileURLToPath(new URL('./dist', import.meta.url))
         const styleFilePath = resolve(tobiasPath, 'tobias-ui-style.js')

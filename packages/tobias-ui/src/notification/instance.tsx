@@ -1,7 +1,7 @@
 import type { AppContext, VNode } from 'vue'
 import { h, render } from 'vue'
-import Notification from './notification'
-import type { NotificationInfoParams, NotificationInstance } from './interface'
+import Notification from 'tobias-ui/notification/notification'
+import type { NotificationInfoParams, NotificationInstance } from 'tobias-ui/notification/interface'
 
 export function createNotification() {
   let instance: NotificationInstance

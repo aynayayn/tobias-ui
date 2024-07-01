@@ -2,8 +2,8 @@
 import { nextTick, onMounted, ref } from 'vue'
 import { useClassnames } from '@tobias-ui/utils'
 import { omit, pick } from 'lodash-es'
-import type { InputProps } from './interface'
-import { inputDomProps } from './interface'
+import type { InputProps } from 'tobias-ui/input/interface'
+import { inputDomProps } from 'tobias-ui/input/interface'
 
 // vue version >= 3.3
 defineOptions({

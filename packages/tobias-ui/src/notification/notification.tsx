@@ -2,7 +2,7 @@ import type { PropType } from 'vue'
 import { TransitionGroup, defineComponent, onMounted, ref } from 'vue'
 import { omit, uniqueId } from 'lodash-es'
 import { useClassnames } from '@tobias-ui/utils'
-import type { NotificationConfig, NotificationInfoParams, NotificationInstance } from './interface'
+import type { NotificationConfig, NotificationInfoParams, NotificationInstance } from 'tobias-ui/notification/interface'
 
 export default defineComponent({
   name: 'TNotification',
