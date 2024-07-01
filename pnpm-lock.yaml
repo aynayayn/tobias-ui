@@ -110,6 +110,9 @@ importers:
       '@juggle/resize-observer':
         specifier: ^3.4.0
         version: 3.4.0
+      '@tobias-ui/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@v-c/utils':
         specifier: ^0.0.26
         version: 0.0.26(typescript@5.4.2)
