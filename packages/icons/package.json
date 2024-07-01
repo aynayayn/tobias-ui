@@ -18,6 +18,9 @@
     "./package.json": "./package.json"
   },
   "main": "es/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "es/index.d.ts",
   "files": [
     "dist",
