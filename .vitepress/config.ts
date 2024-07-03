@@ -4,6 +4,8 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'TobiasUI',
   description: 'A VitePress Site',
+  // eslint-disable-next-line node/prefer-global/process
+  base: process.env.NODE_ENV === 'production' ? '/tobias-ui/' : '/',
   rewrites: {
     'docs/(.*)': '(.*)', // value的开头注意不要加/
     'packages/tobias-ui/src/:comp/(.*)': 'components/:comp/(.*)', // value的开头注意不要加/
