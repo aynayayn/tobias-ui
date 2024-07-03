@@ -2,6 +2,8 @@
 
 <demo src='./demos/basic.vue'></demo>
 
+<demo src='./demos/table-column.vue'></demo>
+
 <demo src='./demos/cell-custom-render.vue'></demo>
 
 <demo src='./demos/cell-use-slot.vue'></demo>

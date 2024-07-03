@@ -22,10 +22,10 @@ const data = ref(Array.from({ length: 5 }).map((_, index) => {
 <template>
   <div>
     <t-table :data="data">
-      <t-table-column key="name" title="姓名" />
-      <t-table-column key="age" title="年龄" />
-      <t-table-column key="address" title="地址" />
-      <t-table-column key="action" title="操作" />
+      <!-- <TTableColumn key="name" title="姓名" />
+      <TTableColumn key="age" title="年龄" />
+      <TTableColumn key="address" title="地址" />
+      <TTableColumn key="action" title="操作" /> -->
     </t-table>
   </div>
 </template>
