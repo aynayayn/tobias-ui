@@ -29,7 +29,7 @@ export const Body = defineComponent<BodyProps>({
             const noEmptyChildren = filterEmpty(children || [])
             if (noEmptyChildren.length) {
               return (
-                <td>
+                <td class={cellCls}>
                   {slots[column.slot]?.({ value: cellRawValue, record: rowData })}
                 </td>
               )

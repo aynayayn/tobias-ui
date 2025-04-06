@@ -1,4 +1,4 @@
-import type { PropType, StyleValue } from 'vue'
+import type { CSSProperties, PropType } from 'vue'
 import { computed, defineComponent, onMounted, ref, watch } from 'vue'
 import { useClassnames } from '@tobias-ui/utils'
 import { ResizeObserver } from '@juggle/resize-observer'
@@ -27,7 +27,7 @@ export default defineComponent({
     const scrollTop = ref(0)
     const viewCount = ref(0)
 
-    // 根据props.itemHeight计算列表实际可渲染的列表单个元素的高度
+    // 根据props.itemHeight计算实际渲染的单个列表项的高度
     const actualItemHeight = computed(() => {
       const DEFAULT_ITEM_HEIGHT = 40
       if (!props.itemHeight || props.itemHeight <= 0)
@@ -45,10 +45,10 @@ export default defineComponent({
       // realStartIndex < 0 && (realStartIndex = 0)
       realStartIndex = Math.max(0, realStartIndex)
       let realEndIndex = endIndex + props.bufferCount
-      // realEndIndex > (props.data.length + 1) && (realEndIndex = props.data.length + 1)
-      realEndIndex = Math.min(props.data.length + 1, realEndIndex)
+      // realEndIndex > (props.data.length - 1) && （realEndIndex = props.data.length - 1)
+      realEndIndex = Math.min(props.data.length - 1, realEndIndex)
 
-      return props.data.slice(realStartIndex, realEndIndex).map((record, index) => ({
+      return props.data.slice(realStartIndex, realEndIndex + 1).map((record, index) => ({
         id: `${realStartIndex + index}abc`,
         top: actualItemHeight.value * (realStartIndex + index),
         record,
@@ -89,7 +89,7 @@ export default defineComponent({
     return () => {
       const renderVisualList = () => {
         return renderList.value.map((item) => {
-          const itemStyle: StyleValue = {
+          const itemStyle: CSSProperties = {
             width: '100%',
             height: `${actualItemHeight.value}px`,
             position: 'absolute',
@@ -110,9 +110,10 @@ export default defineComponent({
 
       const cls = [c()]
       const scrollContentCls = [c('content')]
-      const scrollContentStyle = {
+      const scrollContentStyle: CSSProperties = {
         width: '100%',
         height: `${scrollContentHeight.value}px`,
+        position: 'relative',
       }
       return (
         <div ref={containerRef} {...attrs} class={cls} onScroll={handleScroll}>

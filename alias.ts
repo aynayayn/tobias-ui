@@ -6,7 +6,7 @@ const base = fileURLToPath(new URL('.', import.meta.url))
 export default [
   {
     find: /^tobias-ui/,
-    replacement: resolve(base, 'packages/tobias-ui/src/'),
+    replacement: resolve(base, 'packages/tobias-ui/src/'), // path.resolve将一系列路径或路径片段解析为绝对路径
   },
   {
     find: /^@tobias-ui\/utils/,

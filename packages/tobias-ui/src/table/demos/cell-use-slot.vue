@@ -43,7 +43,7 @@ const data = ref(Array.from({ length: 5 }).map((_, index) => {
   <div>
     <t-table :columns="columns" :data="data">
       <template #age="{ value }">
-        <!-- 这是一个注释空节点 -->
+        <!-- 这是一个注释节点 -->
         <span style="color: red;">{{ value }}</span>
         <span>岁</span>
       </template>

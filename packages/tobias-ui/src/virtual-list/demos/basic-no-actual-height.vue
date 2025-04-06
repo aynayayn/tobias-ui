@@ -55,7 +55,7 @@ function handleClick() {
       </template>
     </t-virtual-list-dynamic-item-height>
     <t-button @click="handleClick">
-      10万条数据
+      生成10万条数据（模拟改变props.data）
     </t-button>
   </div>
 </template>

@@ -3,7 +3,7 @@
 title: 通过自定义组件传递表格的列信息
 ---
 
-在使用`t-table`组件时，在里面书写`t-table-column`组件，并指定`title`和`key`
+在使用`t-table`组件时，在里面使用`t-table-column`组件，并指定`title`和`key`
 </docs>
 
 <script lang="ts" setup>
@@ -22,10 +22,10 @@ const data = ref(Array.from({ length: 5 }).map((_, index) => {
 <template>
   <div>
     <t-table :data="data">
-      <!-- <TTableColumn key="name" title="姓名" />
+      <TTableColumn key="name" title="姓名" />
       <TTableColumn key="age" title="年龄" />
       <TTableColumn key="address" title="地址" />
-      <TTableColumn key="action" title="操作" /> -->
+      <TTableColumn key="action" title="操作" />
     </t-table>
   </div>
 </template>

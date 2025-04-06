@@ -52,9 +52,9 @@ export default defineComponent({
       renderStartIndex.value = realStartIndex
       const endIndex = startIndex + visualCount.value
       let realEndIndex = endIndex + props.bufferCount
-      realEndIndex > props.data.length + 1 && (realEndIndex = props.data.length + 1)
+      realEndIndex > (props.data.length - 1) && (realEndIndex = props.data.length - 1)
 
-      return props.data.slice(realStartIndex, realEndIndex)
+      return props.data.slice(realStartIndex, realEndIndex + 1)
     })
 
     onMounted(() => {

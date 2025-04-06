@@ -9,6 +9,7 @@ export default defineComponent<TableProps>({
   name: 'TTable',
   setup(props, { slots }) {
     const { c } = useClassnames('table')
+
     return () => {
       const children = filterEmpty(slots.default?.() || [])
       const myColumns: any[] = props.columns ?? []

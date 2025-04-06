@@ -28,6 +28,7 @@ const columns = ref([
   },
 ])
 
+// Array.from接收一个类数组对象，返回一个数组，数组的元素来自类数组对象中索引小于length属性值的键对应的值（可能是undefined）
 const data = ref(Array.from({ length: 5 }).map((_, index) => {
   return {
     name: `王小虎 + ${index + 1}`,

@@ -3,8 +3,8 @@
 title: 自定义单元格渲染函数
 ---
 
-在定义`columns`数组时，如果某一列的单元格内容需要自定义显示，可以编写`customRender`函数
-`customRender`函数接收一个包含`value`和`record`的对象
+在定义`columns`数组时，如果某一列的单元格内容需要自定义显示，可以编写`render`函数
+`render`函数接收一个包含`value`和`record`的对象
 </docs>
 
 <script lang="ts" setup>

@@ -24,7 +24,7 @@ export default defineComponent({
     /**
      * 猜测高度（预估高度）
      * 这个数值需要比真实的每一项item的高度要小或者接近所有item高度的平均值
-     * 数值过大可能会造成初始列表时endIndex的值为1，如果再把bufferCount设置成了0，则初始的时候列表项只会有1个
+     * 数值过大可能会造成渲染初始列表时的endIndex的值为1，如果再把bufferCount设置成了0，则初始的时候列表项只会有1个
      * 需要设置得小一点
      */
     const MAYBE_HEIGHT = 20
@@ -57,8 +57,6 @@ export default defineComponent({
         contentDomTotalHeight += positionInfos[endPos].height
       }
 
-      endPos += 1
-
       return endPos
     })
 
@@ -69,21 +67,23 @@ export default defineComponent({
 
     // 缓冲区域最后一个渲染的数据在allData数组中的索引位置
     const renderEndIndex = computed(() => {
-      return Math.min(positionInfos.length, endIndex.value + props.bufferCount)
+      return Math.min(positionInfos.length - 1, endIndex.value + props.bufferCount)
     })
 
     /**
      * 需要渲染在视口区域 + 缓冲区域的数据
      */
     const renderData = computed(() => {
-      return allData.value.slice(renderStartIndex.value, renderEndIndex.value)
+      return allData.value.slice(renderStartIndex.value, renderEndIndex.value + 1)
     })
 
     // 监听props.data，生成allData数组和positionInfos数组
     watch(() => props.data, (val) => {
+      // 临时处理：在列表项数据发生变化时，滚动位置重置为0
       containerRef.value && (containerRef.value.scrollTop = 0)
       scrollTop.value = 0
 
+      // 响应式数据startIndex的改变会触发endIndex的重新计算
       startIndex.value = 0
 
       // 组件初始化执行这里的逻辑的时候，dom还没有渲染
@@ -113,7 +113,7 @@ export default defineComponent({
 
     onMounted(() => {
       // dom完成渲染后，onMounted钩子开始执行
-      // 保存视口容器的高度，并在onMounted钩子执行结束之后再次触发endIndex的计算
+      // 保存视口容器的高度至viewPortHeight，并在onMounted钩子执行结束之后再次触发endIndex的计算
       viewPortHeight.value = containerRef.value?.offsetHeight ?? 0 // clientHeight offsetHeight
 
       // 监听containerRef的dom大小变化
@@ -124,16 +124,16 @@ export default defineComponent({
       })
       resizeObserver.observe(containerRef.value!)
 
-      // dom渲染完成后马上更新已渲染列表项的高度和位置信息
+      // dom渲染完成后马上通过已渲染列表项的高度等信息更新`positionInfos`数组
       updateHeightAndPos()
     })
 
-    // dom元素改变后触发onUpdated钩子
+    // 响应式数据发生改变导致dom重新渲染完成之后触发onUpdated钩子
     onUpdated(() => {
       // console.log('on updated')
       // props.data导致的allData改变之后，会引发滚动列表的第一次重新渲染，进而触发onUpdated钩子执行
       // 执行完updateHeightAndPos之后，会引发scrollContentHeight的改变，滚动列表会再一次渲染，进而触发onUpdated钩子执行
-      // 执行完updateHeightAndPos之后，不再有响应式数据导致的dom重新渲染，onUpdated钩子不再执行
+      // 这一次执行完updateHeightAndPos之后，不再有响应式数据发生改变导致的dom重新渲染，onUpdated钩子不再执行
       updateHeightAndPos()
     })
 
@@ -170,6 +170,7 @@ export default defineComponent({
         if (dffVal !== 0) {
           dataItem.height = oldHeight - dffVal
           dataItem.endPos = dataItem.endPos - dffVal
+          // 更新从索引dataIndex + 1开始，到positionInfos数组的最后一个索引的所有对象的startPos属性和endPos属性
           for (let j = dataIndex + 1; j < positionInfos.length; j++) {
             const jPosDataItem = positionInfos[j]
             // j位置的上一个位置的元素
@@ -181,6 +182,7 @@ export default defineComponent({
         }
       }
 
+      // 更新scrollContentHeight
       scrollContentHeight.value = positionInfos.length ? positionInfos[positionInfos.length - 1].endPos : 0
 
       updateStartInfo()

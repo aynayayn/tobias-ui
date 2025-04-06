@@ -68,7 +68,7 @@ export default defineComponent({
       show.value = false
     }
 
-    // 该函数会在该函数内部被使用的响应式数据发生变化时被调用，如props.content发生变化时，该函数会重新执行
+    // 该函数会在该函数内部被使用（被搜集）的响应式数据发生变化时被调用，如props.content、show等发生变化时，该函数会重新执行
     return () => {
       // 渲染信息提示组件的具体内容的函数
       const renderFloating = () => {
@@ -115,6 +115,8 @@ export default defineComponent({
           console.warn('TTooltip must have a child component')
           return node
         }
+
+        // 上面返回的元素节点不能进行交互
 
         const referenceEvents = {
           onMouseenter: handleReferenceMouseEnter,
