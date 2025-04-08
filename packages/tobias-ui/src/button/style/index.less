@@ -82,4 +82,18 @@
     color: #BFBFBF;
     background-color: #F0F0F0;
   }
+
+  &__loading {
+    @keyframes spin {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 2px;
+  }
 }

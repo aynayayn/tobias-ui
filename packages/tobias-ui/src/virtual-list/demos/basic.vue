@@ -41,7 +41,7 @@ function handleItemClick(record: Record<string, any>) {
         </div>
       </template>
     </t-virtual-list>
-    <t-button @click="handleClick">
+    <t-button style="margin-top: 10px;" @click="handleClick">
       将视口区域高度修改成800px
     </t-button>
   </div>

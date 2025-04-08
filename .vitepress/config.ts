@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'TobiasUI',
-  description: 'A VitePress Site',
+  description: 'UI Components Library',
   // eslint-disable-next-line node/prefer-global/process
   base: process.env.NODE_ENV === 'production' ? '/tobias-ui/' : '/',
   rewrites: {

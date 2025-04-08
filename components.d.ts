@@ -9,8 +9,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     TButton: typeof import('tobias-ui')['Button']
     TInput: typeof import('tobias-ui')['Input']
+    TLoading: typeof import('tobias-ui')['Loading']
     TTable: typeof import('tobias-ui')['Table']
     TTableColumn: typeof import('tobias-ui')['TableColumn']
     TTooltip: typeof import('tobias-ui')['Tooltip']
+    TVirtualList: typeof import('tobias-ui')['VirtualList']
+    TVirtualListDynamicItemHeight: typeof import('tobias-ui')['VirtualListDynamicItemHeight']
+    TVirtualListTranslate: typeof import('tobias-ui')['VirtualListTranslate']
   }
 }

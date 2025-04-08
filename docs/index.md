@@ -4,22 +4,22 @@ layout: home
 
 hero:
   name: "TobiasUI"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: "Vue3 + TypeScript"
+  tagline: UI Components Library
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 组件
+      link: /components/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 工具
+      link: /utils/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Controlled Component
+    details: Designing input as controlled component
+  - title: Virtual Scroll List
+    details: Fixed list item height and unfixed list item height
+  - title: Components for Functional Call
+    details: Re-render globally shared component instance via method call
 ---
 

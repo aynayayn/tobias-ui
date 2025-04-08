@@ -9,7 +9,7 @@ const value = ref<string>(msg)
 
 <template>
   <div style="color: skyblue">
-    <t-button>测试按钮</t-button>
+    <t-button>本库测试按钮</t-button>
     <p>{{ value }}</p>
   </div>
 </template>
