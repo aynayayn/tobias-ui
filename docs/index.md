@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "TobiasUI"
-  text: "Vue3 + TypeScript"
+  text: "Vue3 + TypeScript + Vite"
   tagline: UI Components Library
   actions:
     - theme: brand

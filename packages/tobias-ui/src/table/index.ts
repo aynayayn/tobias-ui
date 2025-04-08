@@ -8,3 +8,5 @@ import Table from 'tobias-ui/table/table'
 }
 
 export default Table
+
+export { TableColumn }

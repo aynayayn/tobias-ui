@@ -1,7 +1,7 @@
 export { default as Button } from 'tobias-ui/button'
 export { default as Input } from 'tobias-ui/input'
 export { default as Tooltip } from 'tobias-ui/tooltip'
-export { default as Table } from 'tobias-ui/table'
+export { default as Table, TableColumn } from 'tobias-ui/table'
 export { default as VirtualList } from 'tobias-ui/virtual-list'
 export { VirtualListTranslate } from 'tobias-ui/virtual-list'
 export { VirtualListDynamicItemHeight } from 'tobias-ui/virtual-list'
